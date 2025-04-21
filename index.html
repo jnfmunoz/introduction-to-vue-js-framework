@@ -11,8 +11,8 @@
     <div id="divShow">
         Hello World
     </div>
-    <button onclick="hide()">Hide</button>
     <button onclick="show()">Show</button>
+    <button onclick="hide()">Hide</button>
 </body>
 
 <script>
@@ -24,6 +24,16 @@
     function hide() {
         let div = document.getElementById('divShow')
         div.style.display = "none"; // hide
+    }
+
+    var objJs = {
+        prop_name: "test",
+        fn_test: function(){
+            alert("aa");
+        },
+        fn_test: function(){
+            alert("123");
+        }
     }
 
 </script>

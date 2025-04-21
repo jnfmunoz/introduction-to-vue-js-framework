@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to VueJS Framework</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- v-on v-if -->
+        <div v-if="show_div">
+            Hello World
+        </div>
+        <br>
+        <!-- <button v-on:click="show()" v-if="show_div==false">Show</button> -->
+        <button v-on:click="show()" v-if="!show_div">Show</button>
+        <button v-on:click="hide()" v-if="show_div">Hide</button>
+        <br><br>
+        <!-- v-model directive -->
+        <div>
+            <input type="text" v-model="name">
+            <button v-on:click="add()">Add</button>
+        </div>
+        <br>
+
+        <!-- v-watch -->
+        <select v-model="id_user">
+            <option v-for="(item, index) in list2" :value="item.id">{{item.name}}</option>
+        </select>
+        
+        <div>
+            {{name}} - ID user {{id_user}} Counter: {{counter}}
+        </div>
+        <br>V-HTML         
+        <div v-html="name">
+        </div>        
+
+        <!-- v-for -->
+        <br>
+        V-FOR
+        <table>
+            <tr>
+                <th>Name</th>
+            </tr>
+            <tbody>
+                <tr v-for="item, index  in list">
+                    <td>{{ index }}</td>
+                    <td>{{ item.name }}</td>
+                    <td><button v-on:click="remove(index)" type="button">Remove</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<script src="js/introduction.js"></script>
+
+
+</html>
