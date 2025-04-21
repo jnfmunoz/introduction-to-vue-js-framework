@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to VueJS Framework</title>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            Hello World
+        </div>
+        <button onclick="hide()">Hide</button>
+        <button onclick="show()">Show</button>
+    </div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<script>
+    let app = new Vue({
+        el: "#app", // vue object
+        data: {
+            show_div: true
+        },
+        methods: {
+            hide() {
+                this.show_div = false;
+            }
+            ,
+            show() {
+                this.show_div = true;
+            }
+        }
+
+    });
+</script>
+
+</html>
